@@ -1,5 +1,6 @@
 
 
+import java.io.BufferedReader; // Buffered reader
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,7 +36,12 @@ public class login extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//others
+		BufferedReader reader = request.getReader(); // directly referencing request reader
+		String line;
+		while ((line = reader.readLine()) != null) {
+			System.out.println(line);
+		}
+		response.getWriter().append("Hello: " + request.getParameter("username"));
 	}
 
 }

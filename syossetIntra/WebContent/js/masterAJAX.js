@@ -14,7 +14,7 @@ function ajax(settings) {
 	// if POST, set special request header, send contents
 	// else send nothing
 	if (settings.method=="POST") {
-		ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		//ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 		ajax.send(settings.input);
 	}
 	else
@@ -27,7 +27,7 @@ function ajax(settings) {
 				timestamp = new Date;
 				responseTime = (new Date).getTime();
 				reqDuration = timestamp.getTime()-requestTime;
-				GLB_AJAX_Interval = ms_s(inter_time);//undefined function
+				GLB_AJAX_Interval = (reqDuration);//ms_s undefined function
 				console.log("AJAX finished in "+GLB_AJAX_Interval)
 				console.log("%c"+"AJAX Success.","color: green;");
 				settings.success(ajax.responseText);

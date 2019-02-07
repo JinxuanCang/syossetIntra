@@ -6,6 +6,8 @@
 <meta charset="ISO-8859-1">
 <title>Login - Syo Intranet</title>
 <link rel="stylesheet" type="text/css" href="css/login.css" />
+<!-- import masterAJAX.js -->
+<script src="js/masterAJAX.js"></script>
 </head>
 <body>
 	<div id="body_main">
@@ -37,14 +39,18 @@
 		}
 		logSubmit.onclick = function() {
 			// TODO check both username and password before sending
-		}
-		logAJAX.onstatechange = function() {
-			
-			if (this.readyState == 4 && this.status == 200) {
-				// TODO if AJAX succeeds, check the return contents
+			var AJAXsets = {
+					input: "username=admin&password=123456",
+					path: "login",
+					method: "POST",
+					success: function(response) {
+						console.log(response);
+					}
 			}
-			
+			ajax(AJAXsets);
 		}
+		
+
 	</script>
 </body>
 </html>
