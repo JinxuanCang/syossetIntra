@@ -58,5 +58,6 @@ public class DatabaseAccess {
 	}
 	protected boolean updateOne() {
 		// TODO update one document
+		return false;
 	}
 }
