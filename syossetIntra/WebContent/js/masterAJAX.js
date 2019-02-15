@@ -14,7 +14,8 @@ function ajax(settings) {
 	// if POST, set special request header, send contents
 	// else send nothing
 	if (settings.method=="POST") {
-		//ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		ajax.setRequestHeader("Content-type", "multipart/form-data");
+		//ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded"); // explicit definition, application/x-www-form-urlencoded as default
 		ajax.send(settings.input);
 	}
 	else
@@ -27,19 +28,23 @@ function ajax(settings) {
 				timestamp = new Date;
 				responseTime = (new Date).getTime();
 				reqDuration = timestamp.getTime()-requestTime;
-				GLB_AJAX_Interval = (reqDuration);//ms_s undefined function
-				console.log("AJAX finished in "+GLB_AJAX_Interval)
-				console.log("%c"+"AJAX Success.","color: green;");
+				console.log("%c"+"AJAX finished in " + convApp(reqDuration),"color: green;");
 				settings.success(ajax.responseText);
 			}
 			else {
-				if (ajax.status == 0) {
-					//loadMessage("error","No Server connection. System unable to operate normally.", true);
-				}
-				else {
-					//loadMessage("error","XML Http Request failed. Return code: <b>"+ajax.status+" "+ajax.statusText+"</b>.", true);
-				}
+				if(ajax.status == 0) console.error("No sever connection.");
 			}
 		}
+	}
+	
+	// helper functions
+	// convert milliseconds to x/1000+"s" or x+"ms"
+	function convApp(value) {
+		if (value>1000) {
+			value /= 1000;value += "s";
+		}
+		else
+			value += "ms";
+		return value;
 	}
 }

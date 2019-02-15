@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/login.css" />
 <!-- import masterAJAX.js -->
 <script src="js/masterAJAX.js"></script>
+<script src="js/sha1.js"></script>
 </head>
 <body>
 	<div id="body_main">
@@ -29,7 +30,10 @@
 		var logPwd = document.getElementById("login_password");
 		// target submission button
 		var logSubmit = document.getElementById("login_submit");
-
+		
+		
+		var dataField = new FormData();
+		
 		logUsr.addEventListener("input", validateEle(this), false);
 		logPwd.addEventListener("input", validateEle(this), false);
 		
@@ -39,8 +43,10 @@
 		}
 		logSubmit.onclick = function() {
 			// TODO check both username and password before sending
+			dataField.set("username", logUsr.value);
+			dataField.set("password", sha1(logPwd.value));
 			var AJAXsets = {
-					input: "username=admin&password=123456",
+					input: dataField,
 					path: "login",
 					method: "POST",
 					success: function(response) {
