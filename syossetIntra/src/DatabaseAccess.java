@@ -15,20 +15,30 @@ import com.mongodb.client.MongoDatabase;
 public class DatabaseAccess {
 	//DB access authentication
 	static MongoClient mongo = MongoClients.create(Settings.MongoClientURL); // bind port
+	
+	// custom variables below
 	ArrayList<String> docsJson;
+	
+	// must, vital database access info storage
 	MongoDatabase db;
 	MongoCollection<Document> collection;
 	FindIterable<Document> documents;
+	
+	// other constructor, sets target database and collection.
 	protected DatabaseAccess(String database, String collection) {
 		setDatabase(database);
 		setCollection(collection);
 	}
+	// default constructor
 	protected DatabaseAccess() {
-		// null
+		// nothing to do
 	}
+	
+	// sets database by name
 	protected void setDatabase(String database) {
 		db = mongo.getDatabase(database);
 	}
+	// sets collection by name
 	protected void setCollection(String collection) {
 		this.collection = db.getCollection(collection);
 	}
@@ -45,5 +55,8 @@ public class DatabaseAccess {
 		for (String document : docsJson) {
 			response.getWriter().append(document);
 	    }
+	}
+	protected boolean updateOne() {
+		// TODO update one document
 	}
 }
