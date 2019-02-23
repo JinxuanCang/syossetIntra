@@ -16,7 +16,7 @@ import javax.servlet.http.Part;
  * Servlet implementation class login
  */
 @WebServlet("/login")
-@MultipartConfig(location="/tmp", fileSizeThreshold=1024*1024, 
+@MultipartConfig(fileSizeThreshold=1024*1024, 
 maxFileSize=1024*1024*5, maxRequestSize=1024*1024*5*5)
 public class login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -43,12 +43,12 @@ public class login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//BufferedReader reader = request.getReader(); // directly referencing request reader
-		String line;
-		//Collection<Part> multiData = request.getParts();
-		System.out.println(request.getPart("username"));
-//		for (Part part : multiData) {
-//			System.out.println(part.getName());
-//		}
+		//String line;
+		Collection<Part> multiData = request.getParts();
+		
+		for (Part part : multiData) {
+			System.out.println(part.getContentType());
+		}
 		
 //		while ((line = reader.readLine()) != null) {
 //			System.out.println(line);

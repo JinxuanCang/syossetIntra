@@ -14,7 +14,7 @@ function ajax(settings) {
 	// if POST, set special request header, send contents
 	// else send nothing
 	if (settings.method=="POST") {
-		ajax.setRequestHeader("Content-type", "multipart/form-data");
+		//ajax.setRequestHeader("Content-type", "multipart/form-data");
 		//ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded"); // explicit definition, application/x-www-form-urlencoded as default
 		ajax.send(settings.input);
 	}
