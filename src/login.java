@@ -24,16 +24,16 @@ public class login extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	// default constructor
     public login() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// load login view
 		request.getRequestDispatcher("/login.jsp").include(request, response);
 	}
 
@@ -41,11 +41,10 @@ public class login extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		//BufferedReader reader = request.getReader(); // directly referencing request reader
 		//String line;
 		Collection<Part> multiData = request.getParts();
-		
+		// TODO map login credentials to multipart form data
 		for (Part part : multiData) {
 			System.out.println(part.getContentType());
 		}
@@ -57,5 +56,7 @@ public class login extends HttpServlet {
 		response.setContentType("text/plain");
 		
 	}
-
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO handle user registration
+	}
 }

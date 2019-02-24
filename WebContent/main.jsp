@@ -6,7 +6,7 @@
 		<title>Syosset Intranet</title>
 		<meta charset="ISO-8859-1">
 		<meta name="viewport" content="width=device-width">
-		<link href="style.css" rel="stylesheet" type="text/css" />
+		<link href="css/main.css" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet"
 			href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
 			integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
@@ -26,8 +26,10 @@
 				</div>
 				<div>Help</div>
 				<div>About</div>
-				<div style="margin: 200px"></div>
-				<div>10.120.32</div>
+				<div></div>
+				<div>10.120.32.203</div>
+				<div></div>
+				<div>Test Student</div>
 			</div>
 			<div id="main_leftBar">
 				<div id="leftBar_pers">
@@ -50,7 +52,7 @@
 				</ul>
 			</div>
 			<div id="main_content">
-				<iframe name="displayArea" src="grader.html"></iframe>
+				<iframe name="displayArea" src="grader.jsp"></iframe>
 			</div>
 		</div>
 	</body>

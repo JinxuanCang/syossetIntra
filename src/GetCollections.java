@@ -37,7 +37,6 @@ public class GetCollections extends HttpServlet {
 	static DatabaseAccess DBDocuments = new DatabaseAccess("DemoSite", "sample0");
     public GetCollections() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

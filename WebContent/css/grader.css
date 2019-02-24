@@ -1,0 +1,56 @@
+.grade_course>div, #grader_header {
+	display: grid;
+	grid-gap: 1px;
+	background-color: grey;
+	grid-template-columns: 30px 100px 60px 70px 40px;
+}
+
+#grader>div>div>div {
+	font-family: Arial;
+	font-size: 13px;
+	padding: 4px;
+}
+
+.grade_course>div:not(#grader_header)>div {
+	background-color: white;
+}
+
+#grader_header>div {
+	text-align: center;
+	color: white;
+	padding: 10px !important;
+	background-color: #009edd;
+}
+
+.grade_category {
+	grid-auto-rows: repeat(3, 20px);
+}
+
+.grade_category>div:nth-child(-n+3) {
+	grid-row: 1/span 3;
+	text-align: center;
+	line-height: 60px;
+}
+
+#grader_header>div:nth-child(4) {
+	grid-column: 4/span 2;
+}
+
+.grade_category>div:nth-child(2n+5) {
+	text-align: center;
+}
+
+.cate_weight:focus {
+	border: 1px solid orange;
+	outline: none;
+}
+
+.grade_course {
+	/*display: flex;*/
+}
+
+#grader {
+	display: grid;
+	grid-auto-columns: auto auto;
+	grid-auto-rows: auto auto;
+}
