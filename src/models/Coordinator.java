@@ -1,12 +1,7 @@
-/**
- * 
- */
 package models;
 
-/**
- * @author jinxu
- *
- */
-public class Coordinator {
+import java.util.ArrayList;
 
+public class Coordinator extends Staff {
+	ArrayList<Department> department;
 }

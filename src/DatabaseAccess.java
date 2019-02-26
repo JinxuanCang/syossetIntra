@@ -60,4 +60,9 @@ public class DatabaseAccess {
 		// TODO update one document
 		return false;
 	}
+	
+//	protected boolean addCoordinator() {
+//		Coordinator c = new Coordinator();
+//		db.add(c);
+//	}
 }

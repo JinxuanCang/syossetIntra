@@ -10,7 +10,7 @@ public class Course {
 	int [] grades;
 	int year_length;
 	boolean isAlternating;
-	int credits; // don't use floating-point arithmetic, possibly represent half-credits?
+	int credits; // multiplied by 10
 	int college_credits;
 	int period_length;
 	
