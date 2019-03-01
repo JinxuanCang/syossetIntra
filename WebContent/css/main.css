@@ -1,28 +1,38 @@
 body {
 	margin: 0;
 }
-
+/* web page container*/
 #page_main {
+	/* Occupy the entire page */
 	height: 100vh;
 	width: 100vw;
+	
+	/* Grid layout */
 	display: grid;
 	grid-template-columns: 200px 1fr;
 	grid-template-rows: 65px 1fr;
 }
 
 #main_topBar {
-	grid-column: 1/3;
+	/* theme */
 	box-shadow: 0px 0px 8px #d8d8d8;
+	
+	/* layering property */
 	z-index: 1;
+	
+	/* grid layout */
+	grid-column: 1/3;
 	display: grid;
 	grid-template-columns: repeat(4, auto) 1fr auto 1fr auto;
 }
 
 #main_content {
+	/* Theme setup */
 	background-color: #f9fbff;
 }
 
 #main_leftBar {
+	/* Theme setup */
 	background-color: #232323;
 }
 

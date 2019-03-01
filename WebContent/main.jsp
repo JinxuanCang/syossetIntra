@@ -39,10 +39,16 @@
 				</div>
 				<ul>
 					<li class="list-tag">General</li>
-					<li>Home/MasterCal</li>
-					<li>Cirriculum Manual</li>
+					<li>Dashboard</li>
+					<li>Master Calendar</li>
+					<li>Curriculum Manual</li>
 					<li>Academic Planner</li>
 					<li>Grade Calculator</li>
+				</ul>
+				<ul>
+					<li class="list-tag">Admin Tools</li>
+					<li>Users</li>
+					<li>Status</li>
 				</ul>
 				<ul>
 					<li class="list-tag">Settings</li>
