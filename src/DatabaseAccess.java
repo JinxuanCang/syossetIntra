@@ -1,18 +1,24 @@
 import java.io.IOException;
-//import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
 
 import org.bson.Document;
+import org.bson.codecs.configuration.CodecRegistry;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+
+import models.Person;
+
 public class DatabaseAccess {
+	// create codec registries for POJOs
+	CodecRegistry registry = null;
+	
 	//DB access authentication
 	static MongoClient mongo = MongoClients.create(Settings.MongoClientURL); // bind port
 	
@@ -58,9 +64,10 @@ public class DatabaseAccess {
 	}
 	protected boolean updateOne() {
 		// TODO update one document
+		// not using Morphia, use POJO instead.
 		return false;
 	}
-	
+
 //	protected boolean addCoordinator() {
 //		Coordinator c = new Coordinator();
 //		db.add(c);

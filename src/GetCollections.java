@@ -10,21 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /* Explicitly imported Packages */
-/*
- * DO NOT USE SELF-DEFINED PACKAGES!
- * */
-//import java.util.Enumeration;
 
-//MongoDB Drives
-
-import org.bson.Document;
-
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-/* End */
 /**
  * Servlet implementation class Sample0
  */

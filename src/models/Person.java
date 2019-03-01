@@ -2,9 +2,9 @@ package models;
 
 public class Person {
 	String firstName;
-	char middleInitial;
+	char middleInitial;// ?
 	String lastName;
 	
-	String phoneNumber;
-	String email;
+//	String phoneNumber;
+//	String email;
 }
