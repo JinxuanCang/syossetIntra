@@ -62,7 +62,7 @@ public class POJOTest extends HttpServlet implements Settings {
 		Person retrievedPerson = iterator.next(); // only will print the first item!!
 
 		System.out.println("Person Retrieved: ");
-		System.out.println(originalPerson);
+		System.out.println(retrievedPerson);
 
 	}
 
