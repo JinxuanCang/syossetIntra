@@ -3,11 +3,7 @@
  */
 package testPOJO;
 
-import java.io.Serializable;
-
 import org.bson.types.ObjectId;
-
-import com.mongodb.BasicDBObject;
 
 /**
  * @author jinxu

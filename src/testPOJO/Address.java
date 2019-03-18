@@ -2,11 +2,6 @@
  * 
  */
 package testPOJO;
-
-import java.io.Serializable;
-
-import com.mongodb.BasicDBObject;
-
 /**
  * @author jinxu
  *
