@@ -59,8 +59,7 @@ public class POJOTest extends HttpServlet implements Settings {
 		collection.insertOne(originalPerson);
 
 		MongoCursor<Person> iterator = collection.find().iterator();
-		iterator.next();
-		Person retrievedPerson = iterator.next();
+		Person retrievedPerson = iterator.next(); // only will print the first item!!
 
 		System.out.println("Person Retrieved: ");
 		System.out.println(originalPerson);
