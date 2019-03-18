@@ -11,7 +11,7 @@ import com.mongodb.BasicDBObject;
  * @author jinxu
  *
  */
-public final class Address {
+public class Address {
 	private String number;
 	private String street;
 	private String city;

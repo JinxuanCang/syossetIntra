@@ -13,7 +13,7 @@ import com.mongodb.BasicDBObject;
  * @author jinxu
  *
  */
-public final class Person {
+public class Person {
 	// data fields
 	private ObjectId id;
 	private String firstName;
