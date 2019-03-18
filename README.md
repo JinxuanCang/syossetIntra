@@ -12,6 +12,7 @@ Check `TODOs` in the Eclipse `Markers`
 #### Workflow
 
 1. fetch, Fetch, `FETCH` from upstream! DO NOT `PULL`.
+2. review differences and `MERGE`.
 2. modify where is necessary
 3. `COMMIT` with MEANINGFUL messsage
 4. `PUSH` or `BRANCH`
