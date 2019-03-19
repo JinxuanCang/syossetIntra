@@ -4,6 +4,14 @@ import java.util.ArrayList;
 
 public class Curriculum {
 	private int year;
+	// private Image cover;
+	private String schoolName;
+	private String departmentHeader;
+	private String specialProgramHeader;
+	private String guidanceCounselorHeader;
+	
+	
+	
 	private ArrayList<Introduction> introductions;
 	private ArrayList<GraduationRequirement> graduationRequirements;
 	private ArrayList<ExaminationRequirement> examinationRequirements;

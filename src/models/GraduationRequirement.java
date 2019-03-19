@@ -1,8 +1,9 @@
 package models;
 
 public class GraduationRequirement {
-	private Department department;
+	private Department department; // needs to be subject
 	private int credits; // tenfold
+	private boolean advanced;
 
 	public GraduationRequirement() {
 		super();
@@ -22,6 +23,14 @@ public class GraduationRequirement {
 
 	public void setCredits(int credits) {
 		this.credits = credits;
+	}
+
+	public boolean isAdvanced() {
+		return advanced;
+	}
+
+	public void setAdvanced(boolean advanced) {
+		this.advanced = advanced;
 	}
 
 }
