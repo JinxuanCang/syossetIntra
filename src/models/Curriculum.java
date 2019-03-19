@@ -9,8 +9,8 @@ public class Curriculum {
 	private String departmentHeader;
 	private String specialProgramHeader;
 	private String guidanceCounselorHeader;
-	
-	
+	private String acknowledgements;
+	private String approvalBox;
 	
 	private ArrayList<Introduction> introductions;
 	private ArrayList<GraduationRequirement> graduationRequirements;
@@ -28,6 +28,38 @@ public class Curriculum {
 
 	public void setYear(int year) {
 		this.year = year;
+	}
+
+	public String getSchoolName() {
+		return schoolName;
+	}
+
+	public void setSchoolName(String schoolName) {
+		this.schoolName = schoolName;
+	}
+
+	public String getDepartmentHeader() {
+		return departmentHeader;
+	}
+
+	public void setDepartmentHeader(String departmentHeader) {
+		this.departmentHeader = departmentHeader;
+	}
+
+	public String getSpecialProgramHeader() {
+		return specialProgramHeader;
+	}
+
+	public void setSpecialProgramHeader(String specialProgramHeader) {
+		this.specialProgramHeader = specialProgramHeader;
+	}
+
+	public String getGuidanceCounselorHeader() {
+		return guidanceCounselorHeader;
+	}
+
+	public void setGuidanceCounselorHeader(String guidanceCounselorHeader) {
+		this.guidanceCounselorHeader = guidanceCounselorHeader;
 	}
 
 	public ArrayList<Introduction> getIntroductions() {
