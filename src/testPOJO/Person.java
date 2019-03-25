@@ -3,6 +3,8 @@
  */
 package testPOJO;
 
+import java.util.List;
+
 import org.bson.types.ObjectId;
 
 /**
@@ -15,6 +17,7 @@ public class Person {
 	private String firstName;
 	private String lastName;
 	private Address address;
+	private List<Subject> subjects;
 
 	// default constructor
 	public Person() {
@@ -61,8 +64,22 @@ public class Person {
 		return address;
 	}
 
+	/**
+	 * @return the subjects
+	 */
+	public List<Subject> getSubjects() {
+		return subjects;
+	}
+
+	/**
+	 * @param subjects the subjects to set
+	 */
+	public void setSubjects(List<Subject> subjects) {
+		this.subjects = subjects;
+	}
+
 	@Override
 	public String toString() {
-		return firstName + " " + lastName + "\n" + "Address: " + address.toString();
+		return firstName + " " + lastName + "\n" + "Address: " + address.toString() + "\nGrades: " + subjects.toString();
 	}
 }

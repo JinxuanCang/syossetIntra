@@ -13,6 +13,7 @@ import org.bson.Document;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
 
+import com.mongodb.ConnectionString;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.client.FindIterable;
@@ -27,26 +28,30 @@ import testPOJO.Person;
 @WebServlet("/POJOTest")
 public class POJOTest extends HttpServlet implements Settings {
 	private static final long serialVersionUID = 1L;
-	// create codec registries for POJOs
+	// create automatic codec registries for POJOs
 	CodecRegistry pojoCodecRegistry = fromRegistries(MongoClient.getDefaultCodecRegistry(),
-			fromProviders(PojoCodecProvider.builder().register(Person.class, Address.class).automatic(true).build()));
-	// registers POJO object classes
-	// DB access authentication
-	static com.mongodb.client.MongoClient mongo; // bind port
-	{
-		MongoClientSettings settings = MongoClientSettings.builder().codecRegistry(pojoCodecRegistry).build();
+			fromProviders(PojoCodecProvider.builder().automatic(true).build()));
+	
+	// DB access configuration
+	static com.mongodb.client.MongoClient mongo; // create once for all instances
+	{ // registers POJO object classes
+		ConnectionString connection = new ConnectionString("mongodb://localhost:27017");
+		MongoClientSettings settings = MongoClientSettings.builder()
+														  .codecRegistry(pojoCodecRegistry)
+														  .applyConnectionString(connection)
+														  .build();
 		mongo = MongoClients.create(settings);
 	}
 
 	// must, vital database access info storage
-	MongoDatabase database = mongo.getDatabase("DemoSite");
-	MongoCollection<Person> collection = database.getCollection("sample3", Person.class);
+	MongoDatabase database = mongo.getDatabase("DemoSite");// select database
+	MongoCollection<Person> collection = database.getCollection("sample3", Person.class); // select collection and model class
 
 	FindIterable<Document> documents;
 
-	// constructor
+	// default constructor
 	public POJOTest() {
-		super();
+		super(); // 
 	}
 
 	private void test() {
