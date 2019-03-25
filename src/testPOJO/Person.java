@@ -3,9 +3,14 @@
  */
 package testPOJO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bson.types.ObjectId;
+
+import models.Course;
+import models.Curriculum;
+import models.Department;
 
 /**
  * @author jinxu
@@ -18,10 +23,10 @@ public class Person {
 	private String lastName;
 	private Address address;
 	private List<Subject> subjects;
-
+	
 	// default constructor
 	public Person() {
-
+		super();
 	}
 
 	public Person(final String firstName, final String lastName, final Address address) {

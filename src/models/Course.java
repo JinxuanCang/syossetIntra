@@ -7,7 +7,7 @@ public class Course {
 	private int college_id;
 	private String name;
 	// private CourseType type
-	private int[] grades;
+	private ArrayList<Integer> grades;
 	private int year_length;
 	private boolean isAlternating;
 	private int credits; // multiplied by 10
@@ -24,6 +24,7 @@ public class Course {
 	// expenses?
 	private String description;
 	private String extra_info;
+	private String satSubjectTest;
 
 	public Course() {
 		super();
@@ -53,11 +54,11 @@ public class Course {
 		this.name = name;
 	}
 
-	public int[] getGrades() {
+	public ArrayList<Integer> getGrades() {
 		return grades;
 	}
 
-	public void setGrades(int[] grades) {
+	public void setGrades(ArrayList<Integer> grades) {
 		this.grades = grades;
 	}
 

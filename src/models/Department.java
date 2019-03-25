@@ -7,7 +7,7 @@ public class Department {
 	private String description;
 	private ArrayList<Coordinator> coordinators;
 	private ArrayList<Course> courses;
-	// Image sequence;?
+	//Image sequence;?
 	private boolean isSpecialProgram;
 
 	public Department() {
@@ -53,5 +53,4 @@ public class Department {
 	public void setSpecialProgram(boolean isSpecialProgram) {
 		this.isSpecialProgram = isSpecialProgram;
 	}
-
 }

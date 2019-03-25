@@ -16,6 +16,7 @@ public class Curriculum {
 	private ArrayList<GraduationRequirement> graduationRequirements;
 	private ArrayList<ExaminationRequirement> examinationRequirements;
 	private ArrayList<Department> departments;
+	private ArrayList<Course> courses;
 	private ArrayList<Person> people;
 
 	public Curriculum() {
