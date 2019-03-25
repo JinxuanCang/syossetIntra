@@ -10,7 +10,7 @@ public class Person {
 	private String title; // Dr.
 
 	public Person() {
-		super();
+		//super(); //? This class does not extend any other class.
 	}
 
 	public ObjectId getId() {
