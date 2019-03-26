@@ -23,11 +23,12 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
-import models.Course;
-import models.Curriculum;
-import models.Department;
 import models.Staff;
 import models.Teacher;
+import models.YearLength;
+import models.curriculum.Course;
+import models.curriculum.Curriculum;
+import models.curriculum.Department;
 import testPOJO.Address;
 import models.Person;
 
@@ -51,7 +52,7 @@ public class ModelTest extends HttpServlet implements Settings {
 
 	// must, vital database access info storage
 	MongoDatabase database = mongo.getDatabase("DemoSite");// select database
-	MongoCollection<Person> collection = database.getCollection("sample3", Person.class); // select collection and model class
+	MongoCollection<YearLength> collection = database.getCollection("sample3", YearLength.class); // select collection and model class
 
 	FindIterable<Document> documents;
 
@@ -76,10 +77,14 @@ public class ModelTest extends HttpServlet implements Settings {
 		curriculum.setDepartments(deps);
 		collection.insertOne(curriculum);
 	}*/
+	
+	private void test() {
+		collection.insertOne(YearLength.FALL);
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//test();
+		test();
 		response.getWriter().append("Check Console");
 	}
 }

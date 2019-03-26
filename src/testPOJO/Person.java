@@ -8,9 +8,9 @@ import java.util.List;
 
 import org.bson.types.ObjectId;
 
-import models.Course;
-import models.Curriculum;
-import models.Department;
+import models.curriculum.Course;
+import models.curriculum.Curriculum;
+import models.curriculum.Department;
 
 /**
  * @author jinxu

@@ -1,6 +1,6 @@
 package models;
 
-public class SATSubjectTest {
+public class SubjectTests {
 	private String name;
 
 	public String getName() {

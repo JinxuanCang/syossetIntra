@@ -13,7 +13,7 @@ import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.apache.tomcat.util.codec.binary.StringUtils;
 
-import models.Course;
+import models.curriculum.Course;
 
 public class CurriculumParser {
 
