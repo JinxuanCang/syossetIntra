@@ -2,6 +2,7 @@
  * 
  */
 package testPOJO;
+
 /**
  * @author jinxu
  *

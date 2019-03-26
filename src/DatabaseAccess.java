@@ -16,50 +16,55 @@ import com.mongodb.client.MongoDatabase;
 public class DatabaseAccess {
 	// create codec registries for POJOs
 	CodecRegistry registry = null;
-	
-	//DB access authentication
+
+	// DB access authentication
 	static MongoClient mongo = MongoClients.create(Settings.MongoClientURL); // bind port
-	
+
 	// custom variables below
 	ArrayList<String> docsJson;
-	
+
 	// must, vital database access info storage
 	MongoDatabase db;
 	MongoCollection<Document> collection;
 	FindIterable<Document> documents;
-	
+
 	// other constructor, sets target database and collection.
 	protected DatabaseAccess(String database, String collection) {
 		setDatabase(database);
 		setCollection(collection);
 	}
+
 	// default constructor
 	protected DatabaseAccess() {
 		// nothing to do
 	}
-	
+
 	// sets database by name
 	protected void setDatabase(String database) {
 		db = mongo.getDatabase(database);
 	}
+
 	// sets collection by name
 	protected void setCollection(String collection) {
 		this.collection = db.getCollection(collection);
 	}
+
 	protected ArrayList<String> getAllDocs() {
 		docsJson = new ArrayList<String>();
 		FindIterable<Document> documents = collection.find();
 		for (Document document : documents) {
 			docsJson.add(document.toJson());
-	    }
+		}
 		return docsJson;
 	}
+
 	protected void getAllDocs(HttpServletResponse response) throws IOException, ServletException {
 		getAllDocs();
 		for (String document : docsJson) {
 			response.getWriter().append(document);
-	    }
+		}
 	}
+
 	protected boolean updateOne() {
 		// TODO update one document
 		// not using Morphia, use POJO instead.

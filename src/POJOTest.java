@@ -31,27 +31,26 @@ public class POJOTest extends HttpServlet implements Settings {
 	// create automatic codec registries for POJOs
 	CodecRegistry pojoCodecRegistry = fromRegistries(MongoClient.getDefaultCodecRegistry(),
 			fromProviders(PojoCodecProvider.builder().automatic(true).build()));
-	
+
 	// DB access configuration
 	static com.mongodb.client.MongoClient mongo; // create once for all instances
 	{ // registers POJO object classes
 		ConnectionString connection = new ConnectionString("mongodb://localhost:27017");
-		MongoClientSettings settings = MongoClientSettings.builder()
-														  .codecRegistry(pojoCodecRegistry)
-														  .applyConnectionString(connection)
-														  .build();
+		MongoClientSettings settings = MongoClientSettings.builder().codecRegistry(pojoCodecRegistry)
+				.applyConnectionString(connection).build();
 		mongo = MongoClients.create(settings);
 	}
 
 	// must, vital database access info storage
 	MongoDatabase database = mongo.getDatabase("DemoSite");// select database
-	MongoCollection<Person> collection = database.getCollection("sample3", Person.class); // select collection and model class
+	MongoCollection<Person> collection = database.getCollection("sample3", Person.class); // select collection and model
+																							// class
 
 	FindIterable<Document> documents;
 
 	// default constructor
 	public POJOTest() {
-		super(); // 
+		super(); //
 	}
 
 	private void test() {

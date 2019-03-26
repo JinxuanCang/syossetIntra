@@ -131,18 +131,17 @@ public class CurriculumParser {
 
 						System.out.println(courseName);
 
-						
-						
 						String line = scanner.nextLine();
-						if(line.startsWith("(")) line = scanner.nextLine();
-						
-						String [] csv = line.split(", ");
+						if (line.startsWith("("))
+							line = scanner.nextLine();
+
+						String[] csv = line.split(", ");
 						int halfYearLength = csv[0].equals("Year") ? 2 : (-1);
 						int halfPeriodLength = csv[1].equals("1 Period") ? 2 : -1;
-						
-						System.out.println("half year length"+ halfYearLength);
+
+						System.out.println("half year length" + halfYearLength);
 						System.out.println("half period length" + halfPeriodLength);
-					
+
 						StringBuilder build = new StringBuilder();
 						while (scanner.hasNextLine()) {
 							try {
@@ -153,11 +152,11 @@ public class CurriculumParser {
 								build.append(nextLine);
 							}
 						}
-						
+
 						String coursedesc = build.toString();
 
 						System.out.println(coursedesc);
-						
+
 						System.out.println();
 					}
 				}

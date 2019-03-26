@@ -24,8 +24,6 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
 import models.Staff;
-import models.Teacher;
-import models.YearLength;
 import models.curriculum.Course;
 import models.curriculum.Curriculum;
 import models.curriculum.Department;
@@ -38,48 +36,42 @@ public class ModelTest extends HttpServlet implements Settings {
 	// create automatic codec registries for POJOs
 	CodecRegistry pojoCodecRegistry = fromRegistries(MongoClient.getDefaultCodecRegistry(),
 			fromProviders(PojoCodecProvider.builder().automatic(true).build()));
-	
+
 	// DB access configuration
 	static com.mongodb.client.MongoClient mongo; // create once for all instances
 	{ // registers POJO object classes
 		ConnectionString connection = new ConnectionString("mongodb://localhost:27017");
-		MongoClientSettings settings = MongoClientSettings.builder()
-														  .codecRegistry(pojoCodecRegistry)
-														  .applyConnectionString(connection)
-														  .build();
+		MongoClientSettings settings = MongoClientSettings.builder().codecRegistry(pojoCodecRegistry)
+				.applyConnectionString(connection).build();
 		mongo = MongoClients.create(settings);
 	}
 
 	// must, vital database access info storage
 	MongoDatabase database = mongo.getDatabase("DemoSite");// select database
-	MongoCollection<YearLength> collection = database.getCollection("sample3", YearLength.class); // select collection and model class
+	MongoCollection<models.curriculum.Course.YearLength> collection = database.getCollection("sample3",
+			models.curriculum.Course.YearLength.class); // select collection and model class
 
 	FindIterable<Document> documents;
 
 	// default constructor
 	public ModelTest() {
-		super(); // 
+		super(); //
 	}
 
-	/*private void test() {
-		Curriculum curriculum = new Curriculum();
-		curriculum.setYear(2018);
-		Course course = new Course();
-		course.setName("JohN ChAe");
-		course.setDescription("john chae hhosdfkajshldfjksdf");
-		course.setCredits(50);
-		Department department = new Department();
-		var courses = new ArrayList<Course>();
-		courses.add(course);
-		department.setCourses(courses);
-		ArrayList<Department> deps = new ArrayList<Department>();
-		deps.add(department);
-		curriculum.setDepartments(deps);
-		collection.insertOne(curriculum);
-	}*/
-	
+	/*
+	 * private void test() { Curriculum curriculum = new Curriculum();
+	 * curriculum.setYear(2018); Course course = new Course();
+	 * course.setName("JohN ChAe");
+	 * course.setDescription("john chae hhosdfkajshldfjksdf");
+	 * course.setCredits(50); Department department = new Department(); var courses
+	 * = new ArrayList<Course>(); courses.add(course);
+	 * department.setCourses(courses); ArrayList<Department> deps = new
+	 * ArrayList<Department>(); deps.add(department);
+	 * curriculum.setDepartments(deps); collection.insertOne(curriculum); }
+	 */
+
 	private void test() {
-		collection.insertOne(YearLength.FALL);
+		collection.insertOne(models.curriculum.Course.YearLength.FALL);
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

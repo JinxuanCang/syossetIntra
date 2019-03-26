@@ -23,7 +23,7 @@ public class Person {
 	private String lastName;
 	private Address address;
 	private List<Subject> subjects;
-	
+
 	// default constructor
 	public Person() {
 		super();
@@ -85,6 +85,7 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return firstName + " " + lastName + "\n" + "Address: " + address.toString() + "\nGrades: " + subjects.toString();
+		return firstName + " " + lastName + "\n" + "Address: " + address.toString() + "\nGrades: "
+				+ subjects.toString();
 	}
 }
