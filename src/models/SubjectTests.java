@@ -1,6 +1,10 @@
 package models;
 
+<<<<<<< HEAD
 public class SubjectTests {
+=======
+public class SATSubjectTest {
+>>>>>>> branch 'master' of https://github.com/JinxuanCang/syossetIntra.git
 	private String name;
 
 	public String getName() {
