@@ -9,6 +9,5 @@ public class Section {
 	private String name;
 	private String description;
 
-	// private List<Image> images;
-
+	private List objects;
 }

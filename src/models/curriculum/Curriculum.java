@@ -1,5 +1,6 @@
 package models.curriculum;
 
+import java.awt.Image;
 import java.util.List;
 
 import org.bson.types.ObjectId;
@@ -15,18 +16,10 @@ public class Curriculum {
 
 	private String schoolName;
 	private int year;
-	// private Image cover;
+	private Image coverPicture;
 	private String acknowledgements;
 
-	private List<Introduction> introductions;
-	private List<GraduationRequirement> graduationRequirements;
-	private List<ExaminationRequirement> examinationRequirements;
+	private List<Section> sections;
 	private List<Department> departments;
 	private List<Course> courses;
-	private List<Staff> staff;
-	private List<Person> people;
-
-	public Curriculum() {
-		super();
-	}
 }

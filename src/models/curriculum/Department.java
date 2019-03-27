@@ -1,5 +1,6 @@
 package models.curriculum;
 
+import java.awt.Image;
 import java.util.List;
 
 public class Department {
@@ -7,14 +8,13 @@ public class Department {
 
 	private String name;
 	private String description;
-
-	private List<Integer> coordinators;
-	private List<Integer> courses;
-
-	// Image sequence
 	private boolean isSpecialProgram;
 
-	public Department() {
-		super();
-	}
+	private List<Integer> subDepartments;
+	private List<CourseList> courseLists;
+
+	private List<Integer> coordinators;
+	private List<Integer> teachers;
+
+	private Image sequence;
 }

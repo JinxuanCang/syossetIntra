@@ -2,19 +2,16 @@ package models.curriculum;
 
 import java.util.List;
 
-import models.SubjectTests;
-
 public class Course {
 	private int id;
-
-	private int courseID;
 	private int collegeID;
 
 	private String name;
+	private String description;
 
 	private Type type;
+	private PeriodType periodType;
 	private List<Integer> grades;
-	private YearLength yearLength;
 
 	private int credits;
 	private int collegeCredits;
@@ -23,14 +20,15 @@ public class Course {
 
 	private List<Integer> prerequisites;
 	private List<Integer> corequisites;
-	private List<Integer> required;
+	private List<Integer> requiredCourses;
 
 	private String expenses;
 
-	private String courseLink;
-	private String description;
-	private String extra_info;
-	private List<SubjectTests> subjectTests;
+	private String link;
+	/*
+	 * private List<APTest> apTest; private List<SATSubjectTest> satSubjectTest;
+	 */
+	private String note;
 
 	public Course() {
 		super();
@@ -40,11 +38,17 @@ public class Course {
 		REGULAR, HONORS, AP, SUPA, LAB, ELECTIVE;
 	}
 
-	public enum YearLength {
-		YEAR, FALL, SPRING;
+	public enum PeriodType {
+		YEAR, ALTERNATING, FALL, SPRING;
 	}
 
-	public enum PeriodType {
-		REGULAR, ALTERNATING
-	}
+	/*
+	 * public enum APTest {
+	 * 
+	 * }
+	 * 
+	 * public enum SATSubjectTest {
+	 * 
+	 * }
+	 */
 }
