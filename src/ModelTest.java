@@ -48,8 +48,8 @@ public class ModelTest extends HttpServlet implements Settings {
 
 	// must, vital database access info storage
 	MongoDatabase database = mongo.getDatabase("DemoSite");// select database
-	MongoCollection<models.curriculum.Course.YearLength> collection = database.getCollection("sample3",
-			models.curriculum.Course.YearLength.class); // select collection and model class
+	MongoCollection<Course> collection = database.getCollection("sample3", Course.class); // select collection and model
+																							// class
 
 	FindIterable<Document> documents;
 
@@ -70,13 +70,9 @@ public class ModelTest extends HttpServlet implements Settings {
 	 * curriculum.setDepartments(deps); collection.insertOne(curriculum); }
 	 */
 
-	private void test() {
-		collection.insertOne(models.curriculum.Course.YearLength.FALL);
-	}
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		test();
+		//test();
 		response.getWriter().append("Check Console");
 	}
 }

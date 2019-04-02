@@ -30,10 +30,6 @@ public class Course {
 	 */
 	private String note;
 
-	public Course() {
-		super();
-	}
-
 	public enum Type {
 		REGULAR, HONORS, AP, SUPA, LAB, ELECTIVE;
 	}
