@@ -2,7 +2,6 @@ import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
 import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,15 +19,9 @@ import com.mongodb.MongoClientSettings;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
-import models.Staff;
 import models.curriculum.Course;
-import models.curriculum.Curriculum;
-import models.curriculum.Department;
-import testPOJO.Address;
-import models.Person;
 
 @WebServlet("/ModelTest")
 public class ModelTest extends HttpServlet implements Settings {
@@ -70,9 +63,10 @@ public class ModelTest extends HttpServlet implements Settings {
 	 * curriculum.setDepartments(deps); collection.insertOne(curriculum); }
 	 */
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//test();
+		// test();
 		response.getWriter().append("Check Console");
 	}
 }

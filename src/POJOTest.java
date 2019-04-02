@@ -70,6 +70,7 @@ public class POJOTest extends HttpServlet implements Settings {
 
 	}
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		test();

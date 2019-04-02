@@ -47,6 +47,7 @@ public class Subject {
 		this.score = score;
 	}
 
+	@Override
 	public String toString() {
 		return "null";
 	}

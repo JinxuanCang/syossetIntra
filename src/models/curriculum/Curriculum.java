@@ -5,12 +5,6 @@ import java.util.List;
 
 import org.bson.types.ObjectId;
 
-import models.ExaminationRequirement;
-import models.GraduationRequirement;
-import models.Introduction;
-import models.Person;
-import models.Staff;
-
 public class Curriculum {
 	private ObjectId id;
 

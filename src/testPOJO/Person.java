@@ -3,14 +3,9 @@
  */
 package testPOJO;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.bson.types.ObjectId;
-
-import models.curriculum.Course;
-import models.curriculum.Curriculum;
-import models.curriculum.Department;
 
 /**
  * @author jinxu
