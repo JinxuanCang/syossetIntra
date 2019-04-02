@@ -1,4 +1,4 @@
-package models.room;
+package models.map;
 
 public class Room {
 	String letter;
